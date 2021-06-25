@@ -1,0 +1,74 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.img-thumbnail {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.url-field {
+  word-break: break-all;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icons {
+  height: 4rem;
+}
+
+.copy-img {
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+}
+
+.social-share-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.short-new-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (min-width: 600px) {
+  .share-card {
+    min-width: 320px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .share-card {
+    min-width: 250px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .sm-title {
+    margin-bottom: 1rem;
+  }
+
+  .sm-btn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .short-new-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .share-center {
+    display: flex;
+    justify-content: space-around;
+  }
+}

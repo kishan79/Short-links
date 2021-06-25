@@ -1,0 +1,217 @@
+<div class="p-2 bg-white text-dark rounded-3">
+  <div class="container-fluid py-5">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="display-5 fw-bold sm-title text-dark ms-3">Shortend URL</h1>
+      </div>
+    </div>
+    <div class="row p-3 rounded">
+      <div class="col-md-8">
+        <div class="shadow p-5 bg-light border rounded-3">
+          <div class="long-url-container mb-3">
+            <label class="text-dark fs-6 fst-italic fw-bold mb-1 ms-2"
+              >Your Long URL</label
+            >
+            <div
+              class="
+                rounded
+                text-wrap
+                p-3
+                fw-bold
+                text-success
+                shadow-sm
+                bg-body
+                url-field
+              "
+            >
+              <%= longUrl %>
+            </div>
+          </div>
+          <div class="short-url-container mb-3">
+            <label class="text-dark fs-6 fst-italic fw-bold mb-1 ms-2"
+              >Short URL</label
+            >
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="
+                    rounded
+                    text-wrap
+                    p-3
+                    fw-bold
+                    text-success
+                    shadow-sm
+                    bg-body
+                    user-select-all
+                    url-field
+                  "
+                  id="short-text"
+                >
+                  <%= shortUrl %>
+                  <img
+                    src="/images/copy-64.png"
+                    id="copy-btn"
+                    class="copy-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="action-container row">
+            <div class="col-12 col-sm-6 share-center">
+              <a
+                class="text-decoration-none"
+                href="mailto:?subject=ShortLinks&body=<%= shortUrl%>"
+              >
+                <Button class="btn"><img src="/images/mail.png" /></Button>
+              </a>
+              <button
+                type="button"
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#Modal"
+              >
+                <img src="/images/share.svg" />
+              </button>
+
+              <div
+                class="modal fade"
+                id="Modal"
+                tabindex="-1"
+                aria-labelledby="ModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="ModalLabel">Share Link</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-12 qr-container">
+                          <img src="<%=qrUrl%>" />
+                        </div>
+                      </div>
+                      <div class="row mt-3">
+                        <div class="col-12">
+                          <div class="social-share-links">
+                            <a
+                              href="https://twitter.com/intent/tweet?text=Short Links&amp;url=<%=shortUrl%>"
+                              target="_blank"
+                              rel="nofollow"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="top"
+                              title="Share on Twitter"
+                              role="button"
+                              aria-label="Share on Twitter"
+                              class="text-decoration-none"
+                              ><img src="/images/twitter-128.png" class="icons"
+                            /></a>
+                            <a
+                              href="https://www.facebook.com/sharer/sharer.php?u=<%=shortUrl%>"
+                              target="_blank"
+                              rel="nofollow"
+                              title="Share on Facebook"
+                              role="button"
+                              aria-label="Share on Facebook"
+                              class="text-decoration-none tooltip-test"
+                              ><img
+                                src="/images/facebook-128.png"
+                                class="icons"
+                              />
+                            </a>
+                            <a
+                              href="https://www.linkedin.com/shareArticle
+?mini=true
+&url=<%=shortUrl%>
+&title=Short Links"
+                              target="_blank"
+                              rel="nofollow"
+                              title="Share on LinkedIn"
+                              role="button"
+                              aria-label="Share on LinkedIn"
+                              class="text-decoration-none tooltip-test"
+                              ><img
+                                src="/images/linkedin-128.png"
+                                class="icons"
+                              />
+                            </a>
+                            <a
+                              href="https://api.whatsapp.com/send?text=<%=shortUrl%>"
+                              target="_blank"
+                              rel="nofollow"
+                              title="Share on WhatsApp"
+                              role="button"
+                              aria-label="Share on WhatsApp"
+                              class="text-decoration-none tooltip-test"
+                              ><img
+                                src="/images/whatsapp-128.png"
+                                class="icons"
+                              />
+                            </a>
+                            <a
+                              href="https://telegram.me/share/url?url=<%=shortUrl%>"
+                              target="_blank"
+                              rel="nofollow"
+                              title="Share on Telegram"
+                              role="button"
+                              aria-label="Share on telegram"
+                              class="text-decoration-none tooltip-test"
+                              ><img
+                                src="/images/telegram-app-128.png"
+                                class="icons"
+                              />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                class="text-decoration-none"
+                href="<%=shortUrl%>"
+                target="_blank"
+              >
+                <Button class="btn"><img src="/images/link.svg" /></Button>
+              </a>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="short-new-btn mt-3">
+                <a href="/"
+                  ><button class="btn btn-outline-success">
+                    Shorten another
+                  </button></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mt-5 text-center">
+        <img
+          src="/images/share_link.svg"
+          class="img-thumbnail"
+          alt="Share link image"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const shortText = document.getElementById("short-text");
+  const btn = document.getElementById("copy-btn");
+  btn.addEventListener("click", copyText);
+  function copyText() {
+    const cb = navigator.clipboard;
+    cb.writeText(shortText.innerText);
+    // btn.innerHTML = "Copied!";
+  }
+</script>

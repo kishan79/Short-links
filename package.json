@@ -1,0 +1,27 @@
+{
+  "name": "short_links",
+  "version": "1.0.0",
+  "description": "URL shortner app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "author": "Kishan Patel",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "helmet": "^4.6.0",
+    "mongoose": "^5.12.14",
+    "nanoid": "^3.1.23",
+    "qrcode": "^1.4.4",
+    "valid-url": "^1.0.9",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
